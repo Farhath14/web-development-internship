@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Interactive Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display"></div>
-        <div class="buttons">
-            <button class="button" onclick="clearDisplay()">C</button>
-            <button class="button" onclick="appendToDisplay('/')">/</button>
-            <button class="button" onclick="appendToDisplay('*')">*</button>
-            <button class="button" onclick="appendToDisplay('-')">-</button>
-            <button class="button" onclick="appendToDisplay('7')">7</button>
-            <button class="button" onclick="appendToDisplay('8')">8</button>
-            <button class="button" onclick="appendToDisplay('9')">9</button>
-            <button class="button" onclick="appendToDisplay('+')">+</button>
-            <button class="button" onclick="appendToDisplay('4')">4</button>
-            <button class="button" onclick="appendToDisplay('5')">5</button>
-            <button class="button" onclick="appendToDisplay('6')">6</button>
-            <button class="button" onclick="appendToDisplay('1')">1</button>
-            <button class="button" onclick="appendToDisplay('2')">2</button>
-            <button class="button" onclick="appendToDisplay('3')">3</button>
-            <button class="button" onclick="appendToDisplay('0')">0</button>
-            <button class="button" onclick="appendToDisplay('.')">.</button>
-            <button class="button equal" onclick="calculate()">=</button>
+    <div class="start-container" id="start-container">
+        <h1>Welcome to the Quiz!</h1>
+        <button class="start-button" id="start-button" onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div class="quiz-container" id="quiz-container" style="display: none;">
+        <div class="question-container" id="question-container"></div>
+        <div class="options-container" id="options-container"></div>
+        <div class="timer" id="timer"></div>
+        <button class="next-button" id="next-button" onclick="nextQuestion()">Next</button>
+    </div>
+    <div class="results-container" id="results-container" style="display: none;">
+        <h2>Quiz Results</h2>
+        <div id="score" class="score"></div>
+        <div class="results-columns">
+            <div class="correct-answers">
+                <h3>Correct Answers</h3>
+                <div id="correct-review"></div>
+            </div>
+            <div class="wrong-answers">
+                <h3>Wrong Answers</h3>
+                <div id="wrong-review"></div>
+            </div>
         </div>
+        <button class="start-button" onclick="resetQuiz()">Retake Quiz</button>
     </div>
     <script src="script.js"></script>
 </body>
